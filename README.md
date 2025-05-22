@@ -1,7 +1,9 @@
 # Running Debian on a DNS-320 REV-A1
 ## 1. Soldering up the Serial header
 Inspecting the pins that look like a serial connection under microscope:
+
 ![image](https://github.com/user-attachments/assets/be980292-f23e-41f9-96ec-03d6ee4ea1e8)
+
 The two pins on either side has a trace that are then router next to each other for some time. This means, that those two must be the `TX` and `RX` line. Measuring the pins against the shielding gives the `ground` pin to be the middle one out of the 3 close together, and connecting a logic analyzer to the 2 suspected pins, with the help of the ground pin, the following can be measured:
 ![image](https://github.com/user-attachments/assets/8e877251-684c-4988-a5f9-dc407a2d8f95)
 The connection baudrate is 115200, and connect your serial to USB , so that :
@@ -29,6 +31,7 @@ Use the partitioning tool of your choiche to format your drive to `ext2` and set
 >**Note:** Normal USB drive is recommanded with no adapters, etc.
 
 ![image](https://github.com/user-attachments/assets/3c9b511e-85db-4098-8ad8-6dc2cae71841)
+
 Use the following command to write everything to the drive:
 ```sh
 sudo tar xzf ./build/bullseye-armel.tar.gz -C /mnt/usb/
