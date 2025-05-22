@@ -1,0 +1,8 @@
+services:
+  linux-builder:
+    build: .
+    privileged: true
+    volumes:
+      - "./scripts:/scripts"
+      - "./build:/build"
+    command: ["./scripts/builder.sh", "bullseye"]
